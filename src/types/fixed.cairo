@@ -199,7 +199,8 @@ impl FixedImpl of Fixed {
 impl FixedPrint of PrintTrait<FixedType> {
     fn print(self: FixedType) {
         self.sign.print();
-        self.mag.into().print();
+        let mag: felt252 = self.mag.into();
+        mag.print();
     }
 }
 
